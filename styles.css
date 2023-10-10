@@ -63,6 +63,15 @@ ul{
     margin-left: 20px;
 }
 
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 30px;
+    z-index: 2;
+    font-size: 1.5rem;
+}
+
 /* SHOWCASE */
 hr{
     margin: 10px 0;
@@ -72,7 +81,7 @@ hr{
     width: 100%;
     height: 550px;
     background: url(img/showcase2.jpg) no-repeat center center/cover;
-    padding-bottom: 50px;
+    padding: 50px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -140,13 +149,13 @@ hr{
 }
 
 .cards-banner-one .content {
-    width: 40%;
+    width: 50%;
     padding: 45px 0 0 15px;
 }
 
 .cards-banner-one p,
 .cards-banner-one h2 {
-    margin: 10px 0 20px 0;
+    margin: 10px 0 10px 0;
 }
 
 /* Cards banner two */
@@ -212,10 +221,49 @@ hr{
 
 /* Footer */
 .footer{
+    
     background-color: #2f3640;
     color: #616161;
     font-size: 12px;
     padding: 20px 0;
     text-align: center;
     padding-bottom: 20px;
+}
+
+@media(max-width:768px){
+    .nav-main ul.nav-menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #2f3640;
+        height: 100%;
+        padding: 30px;
+        opacity: .9;
+        transform: translateX(-400px);
+        transition: .5s ease-in-out;
+    }
+    .nav-main ul.nav-menu.show {
+        transform: translateX(-20px);
+    }
+
+    .nav-main ul.nav-menu li {
+        padding: 20px;
+        border-bottom: #ccc solid 1px;
+    }
+
+    .nav-main ul.nav-search {
+        margin-right: 30px;
+    }
+
+    .news-cards{
+            grid-template-columns: repeat(2, 1fr);
+    }
+    .cards-banner-one .content,
+    .cards-banner-two .content{
+        width: 80%;
+    }
+    .footer-links .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
